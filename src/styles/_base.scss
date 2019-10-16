@@ -1,0 +1,31 @@
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  font-family: $font-primary, sans-serif;
+  font-weight: 300;
+  font-size: 62.5%;
+  color: $color-dark-3;
+  line-height: 1.6;
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: $font-primary, sans-serif;
+}
