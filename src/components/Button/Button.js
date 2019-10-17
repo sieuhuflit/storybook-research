@@ -7,6 +7,8 @@ import styles from './Button.scss';
 import { TYPE } from './Button.constants';
 
 const Button = ({ children, type, onClick }) => {
+  const inputRef = React.createRef();
+
   const getTypes = () => {
     switch (type) {
       case TYPE.WARNING: {
@@ -20,17 +22,29 @@ const Button = ({ children, type, onClick }) => {
       default:
         return null;
     }
-  }
+  };
 
+  const handleButtonClick = () => {
+    onClick(inputRef.current.value);
+  };
 
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={cx(styles.btn, getTypes(type))}
-    >
-      {children}
-    </button>
+    <div className={styles.form}>
+      <input
+        type="text"
+        className={styles.input}
+        placeholder="Type something..."
+        ref={inputRef}
+      />
+
+      <button
+        type="button"
+        onClick={handleButtonClick}
+        className={cx(styles.btn, getTypes(type))}
+      >
+        {children}
+      </button>
+    </div>
   );
 };
 
