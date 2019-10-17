@@ -1,31 +1,29 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text } from '@storybook/addon-knobs';
-import { jsxDecorator } from 'storybook-addon-jsx';
+import { text } from '@storybook/addon-knobs';
 
 import Button from './Button';
 import { TYPE } from './Button.constants';
 import styles from './Button.scss';
 
 //
-// ──────────────────────────────────────────────────── I ──────────
-//   :::::: B U T T O N : :  :   :    :     :        :          :
-// ──────────────────────────────────────────────────────────────
+// ────────────────────────────────────────────────────────────── I ──────────
+//   :::::: B U T T O N   B O O K : :  :   :    :     :        :          :
+// ────────────────────────────────────────────────────────────────────────
 //
 
-const wrapperDecor = (storyFn) => (
+
+const wrapperDecorator = (storyFn) => (
   <div className={styles.wrapper}>
     {storyFn()}
   </div>
 );
 
-const buttonStories = {
+const buttonBook = {
   title: 'Component/Button',
   decorators: [
+    wrapperDecorator,
     // apply for all stories
-    wrapperDecor,
-    withKnobs,
-    jsxDecorator,
   ],
 };
 
@@ -46,9 +44,9 @@ const normalButtonStory = () => (
 );
 
 normalButtonStory.story = {
-  name: TYPE.NORMAL,
+  name: 'Normal',
   parameters: {
-    notes: 'This is a normal. No need parameters',
+    notes: 'This is a normal button',
   },
   decorators: [
     // apply decorator to normal button
@@ -69,9 +67,9 @@ const warningButtonStory = () => (
 );
 
 warningButtonStory.story = {
-  name: TYPE.WARNING,
+  name: 'Warning',
   parameters: {
-    notes: 'This is a warning with type is warning',
+    notes: 'This is a warning button with type is warning',
   },
 };
 
@@ -89,14 +87,14 @@ const dangerButtonStory = () => (
 );
 
 dangerButtonStory.story = {
-  name: TYPE.DANGER,
+  name: 'Danger',
   parameters: {
-    notes: 'This is a danger with type is danger',
+    notes: 'This is a danger button with type is danger',
   },
 };
 
 export {
-  buttonStories as default,
+  buttonBook as default,
   normalButtonStory,
   warningButtonStory,
   dangerButtonStory,

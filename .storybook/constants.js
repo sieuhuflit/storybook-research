@@ -1,4 +1,4 @@
-export const VIEWPORTS = {
+export const VIEWPORTS = Object.freeze({
   iphone5: {
     name: 'iPhone 5',
     styles: {
@@ -127,4 +127,4 @@ export const VIEWPORTS = {
     },
     type: 'mobile',
   },
-};
+});

@@ -4,7 +4,8 @@
   "description": "Research about Storybook(https://storybook.js.org)",
   "main": "index.js",
   "scripts": {
-    "start": "start-storybook --port 3100"
+    "start": "start-storybook --port 3100",
+    "build": "build-storybook -c .storybook -o public"
   },
   "repository": {
     "type": "git",
@@ -19,14 +20,17 @@
   "devDependencies": {
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
+    "@storybook/addon-a11y": "^5.2.4",
     "@storybook/addon-actions": "^5.2.4",
     "@storybook/addon-knobs": "^5.2.4",
     "@storybook/addon-notes": "^5.2.4",
     "@storybook/addon-viewport": "^5.2.4",
+    "@storybook/core": "^5.2.4",
     "@storybook/react": "^5.2.4",
-    "autoprefixer": "^9.6.5",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
+    "babel-register": "^6.26.0",
+    "css-loader": "^3.2.0",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-import-resolver-webpack": "^0.11.1",
@@ -36,15 +40,13 @@
     "eslint-plugin-react": "^7.16.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
     "sass-resources-loader": "^2.0.1",
     "storybook-addon-jsx": "^7.1.6",
     "strip-ansi": "^5.2.0"
   },
   "dependencies": {
-    "css-loader": "^3.2.0",
-    "postcss-loader": "^3.0.0",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "sass-loader": "^8.0.0"
+    "react-dom": "^16.10.2"
   }
 }

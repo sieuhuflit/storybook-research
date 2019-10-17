@@ -7,7 +7,7 @@ const extractCss = new MiniCssExtractPlugin({
 
 module.exports = ({ config, mode }) => {
   /**
-   * SASS Config
+   * Add rules
    */
 
   config.module.rules.push({
@@ -27,14 +27,6 @@ module.exports = ({ config, mode }) => {
           modules: {
             mode: 'local',
             localIdentName: '[name]__[local]--[hash:base64:5]',
-          },
-        },
-      },
-      {
-        loader: 'postcss-loader',
-        options: {
-          config: {
-            path: '.config/postcss.config.js',
           },
         },
       },

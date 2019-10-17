@@ -27,3 +27,9 @@ import '@storybook/addon-notes/register-panel';
  */
 
 import '@storybook/addon-viewport/register';
+
+/**
+ * A11y addon can be helpful to make your UI components more accessible.
+ */
+
+import '@storybook/addon-a11y/register';
