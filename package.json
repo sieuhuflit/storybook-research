@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "storybook": "start-storybook --port 3100",
-    "build-storybook": "build-storybook -c .storybook -o public",
-    "build-chromatic": "./node_modules/.bin/chromatic test --app-code=kawi00pbpyr"
+    "build-storybook": "build-storybook -c .storybook -o build",
+    "build-chromatic": "chromatic test --app-code=kawi00pbpyr"
   },
   "repository": {
     "type": "git",
