@@ -1,2 +1,3 @@
 # storybook-research
-Research about Storybook(https://storybook.js.org)
+https://storybook.js.org
+Develop UI components in isolate environment and apply Visual Regressuib Testing using Chromatic
