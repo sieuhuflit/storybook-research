@@ -4,12 +4,12 @@ import cx from 'classnames';
 
 import styles from './Button.scss';
 
-import { TYPE } from './Button.constants';
+import { TYPE, SIZE } from './Button.constants';
 
-const Button = ({ children, type, onClick }) => {
+const Button = ({ children, type, size, onClick }) => {
   const inputRef = React.createRef();
 
-  const getTypes = () => {
+  const getType = () => {
     switch (type) {
       case TYPE.WARNING: {
         return styles.btnWarning;
@@ -24,9 +24,30 @@ const Button = ({ children, type, onClick }) => {
     }
   };
 
+  const getSize = () => {
+    switch (size) {
+      case SIZE.SMALL: {
+        return styles.btnSmall;
+      }
+
+      case SIZE.LARGE: {
+        return styles.btnLarge;
+      }
+
+      default:
+        return null;
+    }
+  };
+
   const handleButtonClick = () => {
     onClick(inputRef.current.value);
   };
+
+  const btnClassname = cx(
+    styles.btn,
+    getType(),
+    getSize(),
+  );
 
   return (
     <div className={styles.form}>
@@ -40,7 +61,7 @@ const Button = ({ children, type, onClick }) => {
       <button
         type="button"
         onClick={handleButtonClick}
-        className={cx(styles.btn, getTypes(type))}
+        className={btnClassname}
       >
         {children}
       </button>
@@ -54,8 +75,14 @@ Button.propTypes = {
     PropTypes.element,
     PropTypes.node,
   ]).isRequired,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  size: PropTypes.string,
   onClick: PropTypes.func.isRequired,
+};
+
+Button.defaultProps = {
+  type: TYPE.NORMAL,
+  size: SIZE.MEDIUM,
 };
 
 export default Button;

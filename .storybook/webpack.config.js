@@ -36,7 +36,7 @@ module.exports = ({ config, mode }) => {
       {
         loader: 'sass-resources-loader',
         options: {
-          resources: 'src/styles/resource.scss',
+          resources: './src/styles/resource.scss',
         },
       },
     ],

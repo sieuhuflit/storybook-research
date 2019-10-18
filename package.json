@@ -4,8 +4,9 @@
   "description": "Research about Storybook(https://storybook.js.org)",
   "main": "index.js",
   "scripts": {
-    "start": "start-storybook --port 3100",
-    "build": "build-storybook -c .storybook -o public"
+    "storybook": "start-storybook --port 3100",
+    "build-storybook": "build-storybook -c .storybook -o public",
+    "build-chromatic": "./node_modules/.bin/chromatic test --app-code=kawi00pbpyr"
   },
   "repository": {
     "type": "git",
@@ -43,6 +44,7 @@
     "sass-loader": "^8.0.0",
     "sass-resources-loader": "^2.0.1",
     "storybook-addon-jsx": "^7.1.6",
+    "storybook-chromatic": "^3.0.3",
     "strip-ansi": "^5.2.0"
   },
   "dependencies": {
