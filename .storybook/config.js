@@ -1,4 +1,3 @@
-import path from 'path';
 import { configure, addParameters, addDecorator } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
 import { jsxDecorator } from 'storybook-addon-jsx';

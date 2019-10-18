@@ -40,5 +40,15 @@
       color: $color-red;
       border: 2px solid $color-red;
     }
+
+    &-small {
+      width: 75px;
+      height: 30px;
+    }
+
+    &-large {
+      width: 140px;
+      height: 45px;
+    }
   }
 }

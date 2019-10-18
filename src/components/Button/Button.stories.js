@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
 
 import Button from './Button';
-import { TYPE } from './Button.constants';
+import { TYPE, SIZE } from './Button.constants';
 import styles from './Button.scss';
 
 //
@@ -38,7 +38,11 @@ const buttonBook = {
  */
 
 const normalButtonStory = () => (
-  <Button onClick={() => { alert('Normal clicked'); }}>
+  <Button
+    type={text('Type', TYPE.NORMAL)}
+    size={text('Size', SIZE.SMALL)}
+    onClick={() => { alert('Normal clicked'); }}
+  >
     Normal
   </Button>
 );
@@ -60,6 +64,7 @@ normalButtonStory.story = {
 const warningButtonStory = () => (
   <Button
     type={text('Type', TYPE.WARNING)}
+    size={text('Size', SIZE.MEDIUM)}
     onClick={action('Warning clicked')}
   >
     Warning
@@ -80,6 +85,7 @@ warningButtonStory.story = {
 const dangerButtonStory = () => (
   <Button
     type={text('Type', TYPE.DANGER)}
+    size={text('Size', SIZE.LARGE)}
     onClick={action('Danger clicked')}
   >
     Danger
